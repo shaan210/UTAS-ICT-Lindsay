@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "981289292930",
+    "project_id": "salesinterior-de803",
+    "storage_bucket": "salesinterior-de803.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981289292930:android:da27d01edf180b1e47109b",
+        "android_client_info": {
+          "package_name": "com.salesinterior.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx25GzZg7vYsrniNOFb098gAkxDOUA7zU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
