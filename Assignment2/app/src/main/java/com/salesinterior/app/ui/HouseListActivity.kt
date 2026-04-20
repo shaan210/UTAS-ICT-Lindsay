@@ -41,8 +41,8 @@ class HouseListActivity : AppCompatActivity() {
         fabAddHouse = findViewById(R.id.fabAddHouse)
 
         fabAddHouse.setOnClickListener {
-            Toast.makeText(this, "Add New House Clicked", Toast.LENGTH_SHORT).show()
-            // Next step: Navigate to AddHouseActivity
+            val intent = android.content.Intent(this, AddHouseActivity::class.java)
+            startActivity(intent)
         }
     }
 

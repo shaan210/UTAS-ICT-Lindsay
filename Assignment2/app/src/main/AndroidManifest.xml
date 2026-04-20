@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.AddHouseActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
     </application>
