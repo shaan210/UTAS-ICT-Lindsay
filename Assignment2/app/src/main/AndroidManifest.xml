@@ -28,6 +28,13 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".ui.HouseDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RoomDetailActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
     </application>

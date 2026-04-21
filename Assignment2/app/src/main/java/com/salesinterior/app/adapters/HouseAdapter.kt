@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.salesinterior.app.R
 import com.salesinterior.app.data.House
 
-class HouseAdapter(private var houses: List<House>) : RecyclerView.Adapter<HouseAdapter.HouseViewHolder>() {
+class HouseAdapter(
+    private var houses: List<House>,
+    private val onItemClick: (House) -> Unit
+) : RecyclerView.Adapter<HouseAdapter.HouseViewHolder>() {
 
     class HouseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvHouseName: TextView = view.findViewById(R.id.tvHouseName)
@@ -26,6 +29,10 @@ class HouseAdapter(private var houses: List<House>) : RecyclerView.Adapter<House
         holder.tvHouseName.text = house.clientName
         holder.tvProjectCode.text = "Code: ${house.projectCode}"
         holder.tvAddress.text = "${house.street}, ${house.city} ${house.postcode}"
+        
+        holder.itemView.setOnClickListener {
+            onItemClick(house)
+        }
     }
 
     override fun getItemCount() = houses.size

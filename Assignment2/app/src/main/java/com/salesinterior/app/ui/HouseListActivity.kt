@@ -47,7 +47,12 @@ class HouseListActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        houseAdapter = HouseAdapter(emptyList())
+        houseAdapter = HouseAdapter(emptyList()) { house ->
+            val intent = android.content.Intent(this, HouseDetailActivity::class.java)
+            intent.putExtra("HOUSE_ID", house.id)
+            intent.putExtra("HOUSE_NAME", house.clientName)
+            startActivity(intent)
+        }
         rvHouses.layoutManager = LinearLayoutManager(this)
         rvHouses.adapter = houseAdapter
     }
