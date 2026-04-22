@@ -35,6 +35,12 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".ui.ProductListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
     </application>

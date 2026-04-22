@@ -1,14 +1,18 @@
 package com.salesinterior.app.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.salesinterior.app.R
+import com.salesinterior.app.adapters.MeasurementAdapter
 import com.salesinterior.app.data.Measurement
 import com.salesinterior.app.data.Room
 
@@ -21,6 +25,8 @@ class RoomDetailActivity : AppCompatActivity() {
     private lateinit var btnAddWindow: Button
     private lateinit var btnAddFloor: Button
     private lateinit var tvSummaryText: TextView
+    private lateinit var rvMeasurements: RecyclerView
+    private lateinit var measurementAdapter: MeasurementAdapter
 
     private var houseId: String? = null
     private var roomId: String? = null
@@ -35,6 +41,7 @@ class RoomDetailActivity : AppCompatActivity() {
         val roomName = intent.getStringExtra("ROOM_NAME")
 
         setupViews(roomName)
+        setupRecyclerView()
         listenForRoomUpdates()
     }
 
@@ -51,6 +58,20 @@ class RoomDetailActivity : AppCompatActivity() {
 
         btnAddWindow.setOnClickListener { validateAndAddWindow() }
         btnAddFloor.setOnClickListener { validateAndAddFloor() }
+    }
+
+    private fun setupRecyclerView() {
+        rvMeasurements = findViewById(R.id.rvMeasurements)
+        measurementAdapter = MeasurementAdapter(emptyList()) { measurement ->
+            val intent = Intent(this, ProductListActivity::class.java)
+            intent.putExtra("HOUSE_ID", houseId)
+            intent.putExtra("ROOM_ID", roomId)
+            intent.putExtra("MEASUREMENT_ID", measurement.id)
+            intent.putExtra("CATEGORY_FILTER", measurement.type)
+            startActivity(intent)
+        }
+        rvMeasurements.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
+        rvMeasurements.adapter = measurementAdapter
     }
 
     private fun validateAndAddWindow() {
@@ -122,6 +143,8 @@ class RoomDetailActivity : AppCompatActivity() {
                 val room = snapshot?.toObject(Room::class.java)
                 val measurements = room?.measurements ?: emptyList()
                 
+                measurementAdapter.updateMeasurements(measurements)
+
                 val windows = measurements.count { it.type == "WINDOW" }
                 val floors = measurements.count { it.type == "FLOOR_SPACE" }
                 tvSummaryText.text = "$windows Windows, $floors Floor Spaces"
