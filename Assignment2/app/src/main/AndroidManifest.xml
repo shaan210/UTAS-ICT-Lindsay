@@ -41,6 +41,9 @@
             android:name=".ui.ProductDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.QuoteActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
     </application>

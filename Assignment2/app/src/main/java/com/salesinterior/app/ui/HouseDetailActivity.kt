@@ -20,6 +20,7 @@ class HouseDetailActivity : AppCompatActivity() {
     private lateinit var tvHouseName: TextView
     private lateinit var rvRooms: RecyclerView
     private lateinit var fabAddRoom: FloatingActionButton
+    private lateinit var btnViewQuote: android.widget.Button
     private lateinit var roomAdapter: RoomAdapter
     
     private var houseId: String? = null
@@ -37,7 +38,18 @@ class HouseDetailActivity : AppCompatActivity() {
 
         setupRecyclerView()
         setupFab()
+        setupQuoteButton()
         listenForRooms()
+    }
+
+    private fun setupQuoteButton() {
+        btnViewQuote = findViewById(R.id.btnViewQuote)
+        btnViewQuote.setOnClickListener {
+            val intent = Intent(this, QuoteActivity::class.java)
+            intent.putExtra("HOUSE_ID", houseId)
+            intent.putExtra("HOUSE_NAME", tvHouseName.text.toString())
+            startActivity(intent)
+        }
     }
 
     private fun setupRecyclerView() {
