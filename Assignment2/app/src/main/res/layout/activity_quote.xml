@@ -71,6 +71,16 @@
         app:layout_constraintTop_toTopOf="@id/tvGrandTotalLabel" />
 
     <Button
+        android:id="@+id/btnShareQuote"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Share Quote"
+        app:layout_constraintBottom_toTopOf="@id/btnDone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/btnDone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

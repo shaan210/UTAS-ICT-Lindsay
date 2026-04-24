@@ -20,9 +20,12 @@ class QuoteActivity : AppCompatActivity() {
     private lateinit var rvQuoteRooms: RecyclerView
     private lateinit var tvGrandTotal: TextView
     private lateinit var btnDone: Button
+    private lateinit var btnShare: Button
 
     private val db = FirebaseFirestore.getInstance()
     private var houseId: String? = null
+    private var currentRoomQuotes: List<RoomQuote> = emptyList()
+    private var currentGrandTotal: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +38,36 @@ class QuoteActivity : AppCompatActivity() {
         tvHouseName.text = houseName
         tvGrandTotal = findViewById(R.id.tvGrandTotalValue)
         btnDone = findViewById(R.id.btnDone)
+        btnShare = findViewById(R.id.btnShareQuote)
         rvQuoteRooms = findViewById(R.id.rvQuoteRooms)
 
         btnDone.setOnClickListener { finish() }
+        btnShare.setOnClickListener { shareQuote() }
 
         fetchRoomsAndCalculateQuote()
+    }
+
+    private fun shareQuote() {
+        val houseName = tvHouseName.text.toString()
+        val sb = StringBuilder()
+        sb.append("Sales Interior Project Quote\n")
+        sb.append("Project: $houseName\n")
+        sb.append("----------------------------\n")
+        
+        for (quote in currentRoomQuotes) {
+            sb.append("${quote.roomName}: $${String.format(Locale.getDefault(), "%.2f", quote.totalCost)}\n")
+            sb.append("(${quote.windowCount} Windows, ${quote.floorCount} Floor Spaces)\n\n")
+        }
+        
+        sb.append("----------------------------\n")
+        sb.append("Grand Total: $${String.format(Locale.getDefault(), "%.2f", currentGrandTotal)}\n")
+        
+        val shareIntent = android.content.Intent(android.content.Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(android.content.Intent.EXTRA_SUBJECT, "Quote for $houseName")
+            putExtra(android.content.Intent.EXTRA_TEXT, sb.toString())
+        }
+        startActivity(android.content.Intent.createChooser(shareIntent, "Share Quote via"))
     }
 
     private fun fetchRoomsAndCalculateQuote() {
@@ -71,13 +99,11 @@ class QuoteActivity : AppCompatActivity() {
                         windowCount++
                         val width = m.width ?: 0.0
                         val height = m.height ?: 0.0
-                        // Formula: (Width * Height) * Price
                         (width * height) * m.productPrice
                     }
                     "FLOOR_SPACE" -> {
                         floorCount++
                         val area = m.area ?: 0.0
-                        // Formula: Area * Price
                         area * m.productPrice
                     }
                     else -> 0.0
@@ -95,7 +121,9 @@ class QuoteActivity : AppCompatActivity() {
             )
             grandTotal += roomTotal
         }
-
+        
+        currentRoomQuotes = roomQuotes
+        currentGrandTotal = grandTotal
         displayQuote(roomQuotes, grandTotal)
     }
 
