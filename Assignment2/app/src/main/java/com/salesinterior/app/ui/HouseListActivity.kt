@@ -41,12 +41,14 @@ class HouseListActivity : AppCompatActivity() {
         fabAddHouse = findViewById(R.id.fabAddHouse)
 
         fabAddHouse.setOnClickListener {
+
             val intent = android.content.Intent(this, AddHouseActivity::class.java)
             startActivity(intent)
         }
     }
 
     private fun setupRecyclerView() {
+
         houseAdapter = HouseAdapter(emptyList()) { house ->
             val intent = android.content.Intent(this, HouseDetailActivity::class.java)
             intent.putExtra("HOUSE_ID", house.id)
@@ -58,6 +60,7 @@ class HouseListActivity : AppCompatActivity() {
     }
 
     private fun observeHouses() {
+
         db.collection("houses")
             .addSnapshotListener { snapshots, e ->
                 if (e != null) {
@@ -68,6 +71,7 @@ class HouseListActivity : AppCompatActivity() {
                 if (snapshots != null) {
                     val houseList = snapshots.toObjects(House::class.java)
                     
+
                     if (houseList.isEmpty()) {
                         tvNoHouses.visibility = View.VISIBLE
                         rvHouses.visibility = View.GONE
