@@ -91,7 +91,149 @@
             </objects>
             <point key="canvasLocation" x="900" y="800"/>
         </scene>
- 
+        <!--Add New House-->
+        <scene sceneID="ahvc-scene">
+            <objects>
+                <viewController storyboardIdentifier="addHouseVC" id="ahvc" customClass="AddHouseViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ahvc-v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-sv">
+                                <rect key="frame" x="20" y="196" width="353" height="340"/>
+                                <subviews>
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Name" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf1">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ahvc-h1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project Code" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf2">
+                                        <rect key="frame" x="0.0" y="58" width="353" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ahvc-h2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf3">
+                                        <rect key="frame" x="0.0" y="116" width="353" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ahvc-h3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf4">
+                                        <rect key="frame" x="0.0" y="174" width="353" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ahvc-h4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf5">
+                                        <rect key="frame" x="0.0" y="232" width="353" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ahvc-h5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-btn">
+                                        <rect key="frame" x="0.0" y="290" width="353" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ahvc-bh"/>
+                                        </constraints>
+                                        <state key="normal" title="Save House">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveHouseTapped:" destination="ahvc" eventType="touchUpInside" id="ahvc-a1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ahvc-sa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ahvc-sv" firstAttribute="top" secondItem="ahvc-sa" secondAttribute="top" constant="24" id="ahvc-c1"/>
+                            <constraint firstItem="ahvc-sv" firstAttribute="leading" secondItem="ahvc-v" secondAttribute="leading" constant="20" id="ahvc-c2"/>
+                            <constraint firstAttribute="trailing" secondItem="ahvc-sv" secondAttribute="trailing" constant="20" id="ahvc-c3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New House" id="ahvc-ni">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ahvc-cancel">
+                            <connections>
+                                <action selector="cancelTapped:" destination="ahvc" id="ahvc-a2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityTextField" destination="ahvc-tf4" id="ahvc-o4"/>
+                        <outlet property="clientNameTextField" destination="ahvc-tf1" id="ahvc-o1"/>
+                        <outlet property="postcodeTextField" destination="ahvc-tf5" id="ahvc-o5"/>
+                        <outlet property="projectCodeTextField" destination="ahvc-tf2" id="ahvc-o2"/>
+                        <outlet property="saveButton" destination="ahvc-btn" id="ahvc-o6"/>
+                        <outlet property="streetTextField" destination="ahvc-tf3" id="ahvc-o3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ahvc-fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="800"/>
+        </scene>
+        <!--House Detail-->
+        <scene sceneID="hdvc-scene">
+            <objects>
+                <tableViewController id="hdvc" customClass="HouseDetailViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="28" sectionFooterHeight="28" estimatedSectionFooterHeight="28" id="hdvc-tv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RoomCell" textLabel="hdvc-tl" detailTextLabel="hdvc-dl" rowHeight="86" style="IBUITableViewCellStyleSubtitle" id="hdvc-c1">
+                                <rect key="frame" x="0.0" y="50" width="393" height="86"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hdvc-c1" id="hdvc-cv">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="86"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hdvc-tl">
+                                            <rect key="frame" x="20" y="23" width="33" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hdvc-dl">
+                                            <rect key="frame" x="19.999999999999996" y="46.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="rdvc" kind="show" identifier="showRoomDetail" id="hdvc-s1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="House Detail" id="hdvc-ni"/>
+                    <connections>
+                        <segue destination="qvc" kind="show" identifier="showQuote" id="hdvc-s2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdvc-fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1799.2366412213739" y="0.0"/>
+        </scene>
+        
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
