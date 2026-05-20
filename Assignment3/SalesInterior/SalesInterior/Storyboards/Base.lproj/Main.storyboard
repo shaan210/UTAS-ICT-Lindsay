@@ -233,6 +233,203 @@
             </objects>
             <point key="canvasLocation" x="1799.2366412213739" y="0.0"/>
         </scene>
+        <!--Room Detail-->
+        <scene sceneID="rdvc-scene">
+            <objects>
+                <viewController id="rdvc" customClass="RoomDetailViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rdvc-v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-scroll">
+                                <rect key="frame" x="0.0" y="172" width="393" height="612"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-sv">
+                                        <rect key="frame" x="16" y="16" width="361" height="974"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" text="Room: Name" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-namelbl">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" text="Window Measurement" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wlbl">
+                                                <rect key="frame" x="0.0" y="36" width="361" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                            </label>
+                                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Width (m)" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wtf1">
+                                                <rect key="frame" x="0.0" y="66" width="361" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="rdvc-wtf1h"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height (m)" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wtf2">
+                                                <rect key="frame" x="0.0" y="122" width="361" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="rdvc-wtf2h"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wbtn">
+                                                <rect key="frame" x="0.0" y="178" width="361" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="rdvc-wbtnh"/>
+                                                </constraints>
+                                                <state key="normal" title="Add Window Measurement">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addWindowTapped:" destination="rdvc" eventType="touchUpInside" id="rdvc-wa"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" contentMode="left" text="Floor Measurement" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-flbl">
+                                                <rect key="frame" x="0.0" y="234" width="361" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                            </label>
+                                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Area (m2)" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-ftf">
+                                                <rect key="frame" x="0.0" y="264" width="361" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="rdvc-ftfh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-fbtn">
+                                                <rect key="frame" x="0.0" y="320" width="361" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="rdvc-fbtnh"/>
+                                                </constraints>
+                                                <state key="normal" title="Add Floor Measurement">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addFloorTapped:" destination="rdvc" eventType="touchUpInside" id="rdvc-fa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-pbtn">
+                                                <rect key="frame" x="0.0" y="376" width="361" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="rdvc-pbtnh"/>
+                                                </constraints>
+                                                <state key="normal" title="Select Photo">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectPhotoTapped:" destination="rdvc" eventType="touchUpInside" id="rdvc-pa"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-iv">
+                                                <rect key="frame" x="0.0" y="432" width="361" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="rdvc-ivh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" contentMode="left" text="Measurements" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-mlbl">
+                                                <rect key="frame" x="0.0" y="644" width="361" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-tv">
+                                                <rect key="frame" x="0.0" y="674" width="361" height="300"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="rdvc-tvh"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeasurementCell" style="IBUITableViewCellStyleSubtitle" id="rdvc-cell">
+                                                        <rect key="frame" x="0.0" y="50" width="361" height="60"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rdvc-sv" firstAttribute="top" secondItem="rdvc-scroll" secondAttribute="top" constant="16" id="rdvc-sc1"/>
+                                    <constraint firstItem="rdvc-sv" firstAttribute="leading" secondItem="rdvc-scroll" secondAttribute="leading" constant="16" id="rdvc-sc2"/>
+                                    <constraint firstAttribute="trailing" secondItem="rdvc-sv" secondAttribute="trailing" constant="16" id="rdvc-sc3"/>
+                                    <constraint firstAttribute="bottom" secondItem="rdvc-sv" secondAttribute="bottom" constant="20" id="rdvc-sc4"/>
+                                    <constraint firstItem="rdvc-sv" firstAttribute="width" secondItem="rdvc-scroll" secondAttribute="width" constant="-32" id="rdvc-sc5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rdvc-sa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rdvc-scroll" firstAttribute="top" secondItem="rdvc-sa" secondAttribute="top" id="rdvc-vc1"/>
+                            <constraint firstItem="rdvc-scroll" firstAttribute="leading" secondItem="rdvc-v" secondAttribute="leading" id="rdvc-vc2"/>
+                            <constraint firstAttribute="trailing" secondItem="rdvc-scroll" secondAttribute="trailing" id="rdvc-vc3"/>
+                            <constraint firstItem="rdvc-sa" firstAttribute="bottom" secondItem="rdvc-scroll" secondAttribute="bottom" id="rdvc-vc4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Room Detail" id="rdvc-ni"/>
+                    <connections>
+                        <outlet property="btnAddFloor" destination="rdvc-fbtn" id="rdvc-o6"/>
+                        <outlet property="btnAddWindow" destination="rdvc-wbtn" id="rdvc-o5"/>
+                        <outlet property="floorAreaTextField" destination="rdvc-ftf" id="rdvc-o4"/>
+                        <outlet property="measurementsTableView" destination="rdvc-tv" id="rdvc-o8"/>
+                        <outlet property="roomNameLabel" destination="rdvc-namelbl" id="rdvc-o1"/>
+                        <outlet property="selectPhotoButton" destination="rdvc-pbtn" id="rdvc-o9"/>
+                        <outlet property="selectedImageView" destination="rdvc-iv" id="rdvc-o7"/>
+                        <outlet property="windowHeightTextField" destination="rdvc-wtf2" id="rdvc-o3"/>
+                        <outlet property="windowWidthTextField" destination="rdvc-wtf1" id="rdvc-o2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rdvc-fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2700" y="0.0"/>
+        </scene>
+        <!--Products-->
+        <scene sceneID="plvc-scene">
+            <objects>
+                <tableViewController id="plvc" customClass="ProductListViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="28" sectionFooterHeight="28" estimatedSectionFooterHeight="28" id="plvc-tv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductCell" textLabel="plvc-tl" detailTextLabel="plvc-dl" style="IBUITableViewCellStyleSubtitle" id="plvc-c1">
+                                <rect key="frame" x="0.0" y="50" width="393" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="plvc-c1" id="plvc-cv">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="plvc-tl">
+                                            <rect key="frame" x="20" y="9.9999999999999982" width="33" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="plvc-dl">
+                                            <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pdvc" kind="show" identifier="showProductDetail" id="plvc-s1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Products" id="plvc-ni"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="plvc-fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2700" y="800"/>
+        </scene>
         
     </scenes>
     <resources>
