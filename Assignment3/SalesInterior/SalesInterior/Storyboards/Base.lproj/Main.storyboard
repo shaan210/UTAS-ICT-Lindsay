@@ -430,7 +430,58 @@
             </objects>
             <point key="canvasLocation" x="2700" y="800"/>
         </scene>
-        
+        <!--Product Detail-->
+        <scene sceneID="pdvc-scene">
+            <objects>
+                <viewController id="pdvc" customClass="ProductDetailViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pdvc-v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-sv">
+                                <rect key="frame" x="20" y="83" width="353" height="139"/>
+                                <subviews>
+                                    <label opaque="NO" contentMode="left" text="Product Name" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-l1">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" text="$0.00 / m²" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-l2">
+                                        <rect key="frame" x="0.0" y="44.666666666666671" width="353" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" text="Category:" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-l3">
+                                        <rect key="frame" x="0.0" y="84.666666666666657" width="353" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="left" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-l4">
+                                        <rect key="frame" x="0.0" y="121" width="353" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pdvc-sa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pdvc-sv" firstAttribute="top" secondItem="pdvc-sa" secondAttribute="top" constant="24" id="pdvc-c1"/>
+                            <constraint firstItem="pdvc-sv" firstAttribute="leading" secondItem="pdvc-v" secondAttribute="leading" constant="20" id="pdvc-c2"/>
+                            <constraint firstAttribute="trailing" secondItem="pdvc-sv" secondAttribute="trailing" constant="20" id="pdvc-c3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Product Detail" id="pdvc-ni"/>
+                    <connections>
+                        <outlet property="categoryLabel" destination="pdvc-l3" id="pdvc-o3"/>
+                        <outlet property="descriptionLabel" destination="pdvc-l4" id="pdvc-o4"/>
+                        <outlet property="priceLabel" destination="pdvc-l2" id="pdvc-o2"/>
+                        <outlet property="productNameLabel" destination="pdvc-l1" id="pdvc-o1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdvc-fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3600" y="800"/>
+        </scene>
+
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
