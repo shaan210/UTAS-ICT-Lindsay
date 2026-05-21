@@ -481,7 +481,56 @@
             </objects>
             <point key="canvasLocation" x="3600" y="800"/>
         </scene>
-
+        <!--Quote-->
+        <scene sceneID="qvc-scene">
+            <objects>
+                <viewController id="qvc" customClass="QuoteViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qvc-v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvc-tv">
+                                <rect key="frame" x="8" y="180" width="377" height="526"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvc-btn">
+                                <rect key="frame" x="20" y="714" width="353" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qvc-bh"/>
+                                </constraints>
+                                <state key="normal" title="Share Quote">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareTapped:" destination="qvc" eventType="touchUpInside" id="qvc-a1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qvc-sa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qvc-tv" firstAttribute="top" secondItem="qvc-sa" secondAttribute="top" constant="8" id="qvc-c1"/>
+                            <constraint firstItem="qvc-tv" firstAttribute="leading" secondItem="qvc-v" secondAttribute="leading" constant="8" id="qvc-c2"/>
+                            <constraint firstAttribute="trailing" secondItem="qvc-tv" secondAttribute="trailing" constant="8" id="qvc-c3"/>
+                            <constraint firstItem="qvc-btn" firstAttribute="top" secondItem="qvc-tv" secondAttribute="bottom" constant="8" id="qvc-c4"/>
+                            <constraint firstItem="qvc-btn" firstAttribute="leading" secondItem="qvc-v" secondAttribute="leading" constant="20" id="qvc-c5"/>
+                            <constraint firstAttribute="trailing" secondItem="qvc-btn" secondAttribute="trailing" constant="20" id="qvc-c6"/>
+                            <constraint firstItem="qvc-sa" firstAttribute="bottom" secondItem="qvc-btn" secondAttribute="bottom" constant="20" id="qvc-c7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quote" id="qvc-ni"/>
+                    <connections>
+                        <outlet property="quoteTextView" destination="qvc-tv" id="qvc-o1"/>
+                        <outlet property="shareButton" destination="qvc-btn" id="qvc-o2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvc-fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3600" y="0.0"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
