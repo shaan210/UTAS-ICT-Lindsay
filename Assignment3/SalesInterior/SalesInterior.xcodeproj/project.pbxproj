@@ -21,28 +21,16 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-				Untitled.md,
 			);
 			target = 86D4B7C42FB3602900E0BADD /* SalesInterior */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		86D4B8242FB39CC800E0BADD /* Exceptions for "SalesInterior" folder in "Compile Sources" phase from "SalesInterior" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 86D4B7C12FB3602900E0BADD /* Sources */;
-			membershipExceptions = (
-				Untitled.md,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		86D4B7C72FB3602900E0BADD /* SalesInterior */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				86D4B7D72FB3602A00E0BADD /* Exceptions for "SalesInterior" folder in "SalesInterior" target */,
-				86D4B8242FB39CC800E0BADD /* Exceptions for "SalesInterior" folder in "Compile Sources" phase from "SalesInterior" target */,
 			);
 			path = SalesInterior;
 			sourceTree = "<group>";
