@@ -23,9 +23,6 @@ Pods/
 *.swp
 *~
 
-# Firebase
-GoogleService-Info.plist
-
 # Secrets / credentials
 *.pem
 *.p12
