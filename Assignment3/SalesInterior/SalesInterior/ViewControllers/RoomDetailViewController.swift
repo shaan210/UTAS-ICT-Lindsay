@@ -26,8 +26,8 @@ class RoomDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = room?.name ?? "Room Detail"
-        roomNameLabel.text = "Room: \(room?.name ?? "")"
+        title = "Room Details"
+        roomNameLabel.text = room?.name ?? ""
 
         setupTableView()
         setupUI()
@@ -57,8 +57,7 @@ class RoomDetailViewController: UIViewController {
                 switch result {
                 case .success(let updatedRoom):
                     self.room = updatedRoom
-                    self.title = updatedRoom.name
-                    self.roomNameLabel.text = "Room: \(updatedRoom.name)"
+                    self.roomNameLabel.text = updatedRoom.name
                     self.measurementsTableView.reloadData()
                     print("✅ Room updated - \(updatedRoom.measurements.count) measurements")
                 case .failure(let error):
@@ -82,14 +81,15 @@ class RoomDetailViewController: UIViewController {
             $0?.keyboardType = .decimalPad
             $0?.delegate = self
         }
-        btnAddWindow.layer.cornerRadius = 10
-        btnAddFloor.layer.cornerRadius = 10
-        selectPhotoButton.layer.cornerRadius = 10
-        selectedImageView.layer.cornerRadius = 8
+        btnAddWindow.layer.cornerRadius = 22
+        btnAddFloor.layer.cornerRadius = 22
+        selectPhotoButton.layer.cornerRadius = 22
+        selectedImageView.layer.cornerRadius = 22
         selectedImageView.clipsToBounds = true
-        selectedImageView.contentMode = .scaleAspectFill
+        selectedImageView.contentMode = .scaleAspectFit
+        selectedImageView.backgroundColor = .systemGray6
         selectedImageView.image = UIImage(systemName: "photo.fill")
-        selectedImageView.tintColor = .systemGray3
+        selectedImageView.tintColor = .systemGray2
     }
 
     func setupImageManager() {
@@ -250,10 +250,13 @@ extension RoomDetailViewController: UITableViewDelegate, UITableViewDataSource {
             content.secondaryText = "\(m.productName)  –  $\(String(format: "%.2f", m.productPrice))/m²"
         }
         cell.contentConfiguration = content
+        cell.backgroundColor = .systemGray2
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 60 }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
 
     func tableView(_ tableView: UITableView,
                    canEditRowAt indexPath: IndexPath) -> Bool { true }

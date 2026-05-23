@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mnc">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +14,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mnc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mnc-nb">
-                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <rect key="frame" x="0.0" y="124" width="440" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -26,20 +26,20 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Houses-->
+        <!--Dashboard-->
         <scene sceneID="hlvc-scene">
             <objects>
                 <tableViewController id="hlvc" customClass="HouseListViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="28" sectionFooterHeight="28" estimatedSectionFooterHeight="28" id="hlvc-tv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HouseCell" textLabel="hlvc-tl" detailTextLabel="hlvc-dl" rowHeight="82" style="IBUITableViewCellStyleSubtitle" id="hlvc-c1">
-                                <rect key="frame" x="0.0" y="50" width="393" height="82"/>
+                                <rect key="frame" x="0.0" y="50" width="440" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hlvc-c1" id="hlvc-cv">
-                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="82"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="409.66666666666669" height="82"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hlvc-tl">
@@ -54,17 +54,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="highlightedColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <connections>
                                     <segue destination="hdvc" kind="show" identifier="showHouseDetail" id="hlvc-s1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Houses" id="hlvc-ni"/>
+                    <navigationItem key="navigationItem" title="Dashboard" id="hlvc-ni"/>
                     <connections>
                         <segue destination="anc" kind="push" identifier="addHouseModal" id="hlvc-s2"/>
                     </connections>
@@ -79,7 +80,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="anc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="anc-nb">
-                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <rect key="frame" x="0.0" y="124" width="440" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -91,27 +92,29 @@
             </objects>
             <point key="canvasLocation" x="900" y="800"/>
         </scene>
-        <!--Add New House-->
+        <!--Add New Project-->
         <scene sceneID="ahvc-scene">
             <objects>
                 <viewController storyboardIdentifier="addHouseVC" id="ahvc" customClass="AddHouseViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ahvc-v">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-sv">
-                                <rect key="frame" x="20" y="196" width="353" height="340"/>
+                                <rect key="frame" x="20" y="202" width="400" height="282"/>
                                 <subviews>
-                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Name" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf1">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="44"/>
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Name (e.g., Smith Residence)" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf1">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="ahvc-h1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project Code" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf2">
-                                        <rect key="frame" x="0.0" y="58" width="353" height="44"/>
+                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project/Client Code" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf2">
+                                        <rect key="frame" x="0.0" y="58" width="400" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="ahvc-h2"/>
                                         </constraints>
@@ -119,32 +122,41 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf3">
-                                        <rect key="frame" x="0.0" y="116" width="353" height="44"/>
+                                        <rect key="frame" x="0.0" y="116" width="400" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="ahvc-h3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf4">
-                                        <rect key="frame" x="0.0" y="174" width="353" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="ahvc-h4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf5">
-                                        <rect key="frame" x="0.0" y="232" width="353" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="ahvc-h5"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-cpsv">
+                                        <rect key="frame" x="0.0" y="174" width="400" height="44"/>
+                                        <subviews>
+                                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf4">
+                                                <rect key="frame" x="0.0" y="0.0" width="278" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="ahvc-h4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postcode" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-tf5">
+                                                <rect key="frame" x="290" y="0.0" width="110" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="ahvc-h5"/>
+                                                    <constraint firstAttribute="width" constant="110" id="ahvc-w5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahvc-btn">
-                                        <rect key="frame" x="0.0" y="290" width="353" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <rect key="frame" x="0.0" y="232" width="400" height="50"/>
+                                        <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ahvc-bh"/>
                                         </constraints>
@@ -159,14 +171,14 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ahvc-sa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ahvc-sv" firstAttribute="top" secondItem="ahvc-sa" secondAttribute="top" constant="24" id="ahvc-c1"/>
                             <constraint firstItem="ahvc-sv" firstAttribute="leading" secondItem="ahvc-v" secondAttribute="leading" constant="20" id="ahvc-c2"/>
                             <constraint firstAttribute="trailing" secondItem="ahvc-sv" secondAttribute="trailing" constant="20" id="ahvc-c3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New House" id="ahvc-ni">
+                    <navigationItem key="navigationItem" title="Add New Project" id="ahvc-ni">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ahvc-cancel">
                             <connections>
                                 <action selector="cancelTapped:" destination="ahvc" id="ahvc-a2"/>
@@ -186,20 +198,20 @@
             </objects>
             <point key="canvasLocation" x="1800" y="800"/>
         </scene>
-        <!--House Detail-->
+        <!--House Details-->
         <scene sceneID="hdvc-scene">
             <objects>
                 <tableViewController id="hdvc" customClass="HouseDetailViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="28" sectionFooterHeight="28" estimatedSectionFooterHeight="28" id="hdvc-tv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RoomCell" textLabel="hdvc-tl" detailTextLabel="hdvc-dl" rowHeight="86" style="IBUITableViewCellStyleSubtitle" id="hdvc-c1">
-                                <rect key="frame" x="0.0" y="50" width="393" height="86"/>
+                                <rect key="frame" x="0.0" y="50" width="440" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hdvc-c1" id="hdvc-cv">
-                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="86"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="409.66666666666669" height="86"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hdvc-tl">
@@ -218,13 +230,14 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <connections>
                                     <segue destination="rdvc" kind="show" identifier="showRoomDetail" id="hdvc-s1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="House Detail" id="hdvc-ni"/>
+                    <navigationItem key="navigationItem" title="House Details" id="hdvc-ni"/>
                     <connections>
                         <segue destination="qvc" kind="show" identifier="showQuote" id="hdvc-s2"/>
                     </connections>
@@ -233,48 +246,54 @@
             </objects>
             <point key="canvasLocation" x="1799.2366412213739" y="0.0"/>
         </scene>
-        <!--Room Detail-->
+        <!--Room Details-->
         <scene sceneID="rdvc-scene">
             <objects>
                 <viewController id="rdvc" customClass="RoomDetailViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rdvc-v">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-scroll">
-                                <rect key="frame" x="0.0" y="172" width="393" height="612"/>
+                                <rect key="frame" x="0.0" y="178" width="440" height="710"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-sv">
-                                        <rect key="frame" x="16" y="16" width="361" height="974"/>
+                                        <rect key="frame" x="16" y="16" width="408" height="912"/>
                                         <subviews>
-                                            <label opaque="NO" contentMode="left" text="Room: Name" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-namelbl">
-                                                <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            </label>
-                                            <label opaque="NO" contentMode="left" text="Window Measurement" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wlbl">
-                                                <rect key="frame" x="0.0" y="36" width="361" height="18"/>
+                                            <label opaque="NO" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-namelbl">
+                                                <rect key="frame" x="0.0" y="0.0" width="408" height="18"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <color key="textColor" systemColor="systemBlueColor"/>
                                             </label>
-                                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Width (m)" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wtf1">
-                                                <rect key="frame" x="0.0" y="66" width="361" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="rdvc-wtf1h"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height (m)" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wtf2">
-                                                <rect key="frame" x="0.0" y="122" width="361" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="rdvc-wtf2h"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <label opaque="NO" contentMode="left" text="Windows" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wlbl">
+                                                <rect key="frame" x="0.0" y="30" width="408" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-whsv">
+                                                <rect key="frame" x="0.0" y="60" width="408" height="44"/>
+                                                <subviews>
+                                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Width (m)" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wtf1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="198" height="44"/>
+                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="rdvc-wtf1h"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height (m)" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wtf2">
+                                                        <rect key="frame" x="210" y="0.0" width="198" height="44"/>
+                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="rdvc-wtf2h"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-wbtn">
-                                                <rect key="frame" x="0.0" y="178" width="361" height="44"/>
-                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <rect key="frame" x="0.0" y="116" width="408" height="44"/>
+                                                <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="rdvc-wbtnh"/>
                                                 </constraints>
@@ -282,16 +301,16 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addWindowTapped:" destination="rdvc" eventType="touchUpInside" id="rdvc-wa"/>
+                                                    <action selector="addWindowTapped:" destination="rdvc" eventType="touchUpInside" id="34h-hj-DTu"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" contentMode="left" text="Floor Measurement" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-flbl">
-                                                <rect key="frame" x="0.0" y="234" width="361" height="18"/>
+                                            <label opaque="NO" contentMode="left" text="Floor Spaces" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-flbl">
+                                                <rect key="frame" x="0.0" y="172" width="408" height="18"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <color key="textColor" systemColor="systemGreenColor"/>
                                             </label>
                                             <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Area (m2)" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-ftf">
-                                                <rect key="frame" x="0.0" y="264" width="361" height="44"/>
+                                                <rect key="frame" x="0.0" y="202" width="408" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="rdvc-ftfh"/>
                                                 </constraints>
@@ -299,8 +318,8 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-fbtn">
-                                                <rect key="frame" x="0.0" y="320" width="361" height="44"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <rect key="frame" x="0.0" y="258" width="408" height="44"/>
+                                                <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="rdvc-fbtnh"/>
                                                 </constraints>
@@ -311,9 +330,16 @@
                                                     <action selector="addFloorTapped:" destination="rdvc" eventType="touchUpInside" id="rdvc-fa"/>
                                                 </connections>
                                             </button>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-iv">
+                                                <rect key="frame" x="0.0" y="314" width="408" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="rdvc-ivh"/>
+                                                </constraints>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-pbtn">
-                                                <rect key="frame" x="0.0" y="376" width="361" height="44"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <rect key="frame" x="0.0" y="526" width="408" height="44"/>
+                                                <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="rdvc-pbtnh"/>
                                                 </constraints>
@@ -324,27 +350,21 @@
                                                     <action selector="selectPhotoTapped:" destination="rdvc" eventType="touchUpInside" id="rdvc-pa"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-iv">
-                                                <rect key="frame" x="0.0" y="432" width="361" height="200"/>
-                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="rdvc-ivh"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" contentMode="left" text="Measurements" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-mlbl">
-                                                <rect key="frame" x="0.0" y="644" width="361" height="18"/>
+                                            <label opaque="NO" contentMode="left" text="Measurements List:" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-mlbl">
+                                                <rect key="frame" x="0.0" y="582" width="408" height="18"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rdvc-tv">
-                                                <rect key="frame" x="0.0" y="674" width="361" height="300"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <rect key="frame" x="0.0" y="612" width="408" height="300"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="rdvc-tvh"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeasurementCell" style="IBUITableViewCellStyleSubtitle" id="rdvc-cell">
-                                                        <rect key="frame" x="0.0" y="50" width="361" height="60"/>
+                                                        <rect key="frame" x="0.0" y="50" width="408" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -361,7 +381,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rdvc-sa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rdvc-scroll" firstAttribute="top" secondItem="rdvc-sa" secondAttribute="top" id="rdvc-vc1"/>
                             <constraint firstItem="rdvc-scroll" firstAttribute="leading" secondItem="rdvc-v" secondAttribute="leading" id="rdvc-vc2"/>
@@ -369,7 +389,7 @@
                             <constraint firstItem="rdvc-sa" firstAttribute="bottom" secondItem="rdvc-scroll" secondAttribute="bottom" id="rdvc-vc4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Room Detail" id="rdvc-ni"/>
+                    <navigationItem key="navigationItem" title="Room Details" id="rdvc-ni"/>
                     <connections>
                         <outlet property="btnAddFloor" destination="rdvc-fbtn" id="rdvc-o6"/>
                         <outlet property="btnAddWindow" destination="rdvc-wbtn" id="rdvc-o5"/>
@@ -391,15 +411,15 @@
             <objects>
                 <tableViewController id="plvc" customClass="ProductListViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="28" sectionFooterHeight="28" estimatedSectionFooterHeight="28" id="plvc-tv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductCell" textLabel="plvc-tl" detailTextLabel="plvc-dl" style="IBUITableViewCellStyleSubtitle" id="plvc-c1">
-                                <rect key="frame" x="0.0" y="50" width="393" height="55"/>
+                                <rect key="frame" x="0.0" y="50" width="440" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="plvc-c1" id="plvc-cv">
-                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="409.66666666666669" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="plvc-tl">
@@ -435,27 +455,27 @@
             <objects>
                 <viewController id="pdvc" customClass="ProductDetailViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pdvc-v">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="894"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-sv">
-                                <rect key="frame" x="20" y="83" width="353" height="139"/>
+                                <rect key="frame" x="20" y="86" width="400" height="139"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" text="Product Name" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-l1">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="28.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="28.666666666666668"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" text="$0.00 / m²" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-l2">
-                                        <rect key="frame" x="0.0" y="44.666666666666671" width="353" height="24"/>
+                                        <rect key="frame" x="0.0" y="44.666666666666657" width="400" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" text="Category:" textAlignment="natural" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-l3">
-                                        <rect key="frame" x="0.0" y="84.666666666666657" width="353" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="84.666666666666657" width="400" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="pdvc-l4">
-                                        <rect key="frame" x="0.0" y="121" width="353" height="18"/>
+                                        <rect key="frame" x="0.0" y="121" width="400" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     </label>
                                 </subviews>
@@ -486,18 +506,18 @@
             <objects>
                 <viewController id="qvc" customClass="QuoteViewController" customModule="SalesInterior" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qvc-v">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvc-tv">
-                                <rect key="frame" x="8" y="180" width="377" height="526"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="8" y="186" width="424" height="624"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvc-btn">
-                                <rect key="frame" x="20" y="714" width="353" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <rect key="frame" x="20" y="818" width="400" height="50"/>
+                                <color key="backgroundColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qvc-bh"/>
                                 </constraints>
@@ -510,7 +530,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qvc-sa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qvc-tv" firstAttribute="top" secondItem="qvc-sa" secondAttribute="top" constant="8" id="qvc-c1"/>
                             <constraint firstItem="qvc-tv" firstAttribute="leading" secondItem="qvc-v" secondAttribute="leading" constant="8" id="qvc-c2"/>
@@ -536,17 +556,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.53333333329999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.0" green="0.76470588240000004" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

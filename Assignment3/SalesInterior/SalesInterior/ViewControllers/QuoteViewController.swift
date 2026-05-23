@@ -19,7 +19,7 @@ class QuoteViewController: UIViewController {
         quoteTextView.isEditable = false
         quoteTextView.isSelectable = true
         quoteTextView.font = UIFont(name: "Courier", size: 13) ?? UIFont.systemFont(ofSize: 13)
-        shareButton.layer.cornerRadius = 12
+        shareButton.layer.cornerRadius = 6
         shareButton.clipsToBounds = true
         generateQuote()
     }

@@ -10,7 +10,7 @@ class HouseListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Client Houses"
+        title = "Dashboard"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
@@ -75,14 +75,17 @@ class HouseListViewController: UITableViewController {
         let house = houses[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = house.clientName
-        content.secondaryText = "\(house.street), \(house.city) \(house.postcode)  |  \(house.projectCode)"
+        content.secondaryText = "Code: \(house.projectCode)\n\(house.street), \(house.city) \(house.postcode)"
+        content.secondaryTextProperties.numberOfLines = 0
         cell.contentConfiguration = content
         cell.accessoryType = .disclosureIndicator
         return cell
     }
 
     override func tableView(_ tableView: UITableView,
-                            heightForRowAt indexPath: IndexPath) -> CGFloat { 60 }
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
 
     // MARK: - TableView Delegate
 
