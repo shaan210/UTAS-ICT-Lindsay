@@ -7,15 +7,15 @@ struct Room: Identifiable, Codable {
     @DocumentID var id: String?
     var name: String
     var measurements: [Measurement]
+    var imageData: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, measurements
+        case id, name, measurements, imageData
     }
 
-    init(name: String = "", measurements: [Measurement] = []) {
+    init(name: String = "", measurements: [Measurement] = [], imageData: String? = nil) {
         self.name = name
         self.measurements = measurements
+        self.imageData = imageData
     }
-    
-    // Remove custom decoder - let @DocumentID and Codable handle it automatically
 }
