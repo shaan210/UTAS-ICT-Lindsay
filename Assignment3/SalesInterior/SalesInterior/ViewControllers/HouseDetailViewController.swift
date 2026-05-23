@@ -156,7 +156,9 @@ class HouseDetailViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView,
-                            heightForRowAt indexPath: IndexPath) -> CGFloat { 56 }
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
 
     // MARK: - TableView Delegate (Delete)
 

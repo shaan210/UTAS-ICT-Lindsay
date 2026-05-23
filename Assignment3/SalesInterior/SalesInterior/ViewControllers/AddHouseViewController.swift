@@ -25,7 +25,7 @@ class AddHouseViewController: UIViewController {
     // MARK: - Setup
 
     func styleUI() {
-        saveButton.layer.cornerRadius = 12
+        saveButton.layer.cornerRadius = 6
         saveButton.clipsToBounds = true
     }
 
