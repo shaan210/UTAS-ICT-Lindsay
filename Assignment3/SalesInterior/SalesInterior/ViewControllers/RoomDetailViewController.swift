@@ -32,6 +32,7 @@ class RoomDetailViewController: UIViewController {
         setupTableView()
         setupUI()
         setupImageManager()
+        if let room = room { loadImageFromRoom(room) }
         startRoomListener()
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -59,6 +60,7 @@ class RoomDetailViewController: UIViewController {
                     self.room = updatedRoom
                     self.roomNameLabel.text = updatedRoom.name
                     self.measurementsTableView.reloadData()
+                    self.loadImageFromRoom(updatedRoom)
                     print("✅ Room updated - \(updatedRoom.measurements.count) measurements")
                 case .failure(let error):
                     print("⚠️ Error observing room: \(error.localizedDescription)")
@@ -301,8 +303,70 @@ extension RoomDetailViewController: ImageManagerDelegate {
     func imageManager(_ manager: ImageManager, didSelectImage image: UIImage) {
         selectedImageView.image = image
         selectedImageView.contentMode = .scaleAspectFill
+        uploadRoomImage(image)
     }
     func imageManagerDidCancel(_ manager: ImageManager) {
         // Nothing to do — picker already dismissed
+    }
+}
+
+// MARK: - Image Upload / Display
+
+extension RoomDetailViewController {
+
+    func loadImageFromRoom(_ room: Room) {
+        guard let base64 = room.imageData,
+              let data = Data(base64Encoded: base64),
+              let image = UIImage(data: data) else { return }
+        selectedImageView.image = image
+        selectedImageView.contentMode = .scaleAspectFill
+    }
+
+    func uploadRoomImage(_ image: UIImage) {
+        guard let houseId = house?.id, let roomId = room?.id else { return }
+        guard let data = compressImage(image) else {
+            showAlert(title: "Image Error", message: "Could not compress image.")
+            return
+        }
+        let base64 = data.base64EncodedString()
+        // Firestore document max is 1 MiB. Base64 is ~33% larger than binary, so cap ~700KB binary.
+        if base64.count > 900_000 {
+            showAlert(title: "Image Too Large", message: "Please choose a smaller image.")
+            return
+        }
+        FirebaseManager.shared.updateRoomImage(houseId: houseId, roomId: roomId, imageData: base64) { [weak self] result in
+            DispatchQueue.main.async {
+                if case .failure(let error) = result {
+                    self?.showAlert(title: "Upload Error", message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
+    /// Resizes to max 800px on the longest side and compresses JPEG quality until under ~700KB.
+    func compressImage(_ image: UIImage) -> Data? {
+        let maxDimension: CGFloat = 800
+        var working = image
+        let size = image.size
+        if max(size.width, size.height) > maxDimension {
+            let aspect = size.width / size.height
+            let newSize: CGSize = aspect > 1
+                ? CGSize(width: maxDimension, height: maxDimension / aspect)
+                : CGSize(width: maxDimension * aspect, height: maxDimension)
+            UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+            image.draw(in: CGRect(origin: .zero, size: newSize))
+            if let resized = UIGraphicsGetImageFromCurrentImageContext() {
+                working = resized
+            }
+            UIGraphicsEndImageContext()
+        }
+
+        var quality: CGFloat = 0.7
+        var data = working.jpegData(compressionQuality: quality)
+        while let d = data, d.count > 700_000, quality > 0.1 {
+            quality -= 0.1
+            data = working.jpegData(compressionQuality: quality)
+        }
+        return data
     }
 }
