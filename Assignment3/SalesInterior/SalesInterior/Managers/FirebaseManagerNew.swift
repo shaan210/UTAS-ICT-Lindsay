@@ -212,6 +212,23 @@ class FirebaseManager {
             }
     }
 
+    func updateRoomImage(
+        houseId: String,
+        roomId: String,
+        imageData: String,
+        completion: @escaping (Result<Void, Error>) -> Void
+    ) {
+        db.collection("houses").document(houseId)
+            .collection("rooms").document(roomId)
+            .updateData(["imageData": imageData]) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success(()))
+                }
+            }
+    }
+
     // MARK: - MEASUREMENTS (Embedded in Room document)
 
     func addMeasurement(
