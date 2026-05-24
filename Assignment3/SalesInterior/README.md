@@ -15,10 +15,10 @@ This iOS implementation mirrors the Assignment 2 Android workflow, redesigned fo
 
 ## Development Environment
 
-- **IDE:** Xcode 16 (or newer)
-- **Language:** Swift 5.10
+- **IDE:** Xcode 26.5
+- **Language:** Swift 6.3.2
 - **Minimum iOS Version:** iOS 15
-- **Target Device:** iPhone 16 Pro Simulator (iOS 18)
+- **Target Device:** iPhone 17 Pro Simulator (ios 26.5)
 - **Orientation:** Portrait only
 - **Photo Picker:** Photo Gallery only (Camera mode unavailable in Simulator)
 
@@ -58,24 +58,22 @@ After picking a product via a `UIAlertController.Style.actionSheet`, the measure
 
 ### Supporting Components
 
-| Component | Role |
-|---|---|
-| `FirebaseManager` | Singleton wrapping all Firestore CRUD (houses, rooms, measurements, products, room images) |
-| `ValidationManager` | Centralised form-validation rules used by every form |
-| `ImageManager` (with `ImageManagerDelegate`) | Wraps `UIImagePickerController` and forwards selected images back to the host view controller |
-| `House`, `Room`, `Measurement`, `Product` | `Codable` model structs decorated with `@DocumentID` for Firestore round-trip |
+
+`FirebaseManager`: Singleton wrapping all Firestore CRUD (houses, rooms, measurements, products, room images)
+`ValidationManager`: Centralised form-validation rules used by every form
+`ImageManager` (with `ImageManagerDelegate`): Wraps `UIImagePickerController` and forwards selected images back to the host view controller
+`House`, `Room`, `Measurement`, `Product`: `Codable` model structs decorated with `@DocumentID` for Firestore round-trip
 
 ---
 
 ## Architecture & Technical Details
 
-- **Language:** Swift 5.10
+- **Language:** Swift 6.3.2
 - **UI Approach:** UIKit + Storyboard (single `Main.storyboard` with all scenes)
 - **Persistence:** Firebase Firestore (Spark / free tier)
 - **Database schema:** `houses/{houseId}` → `rooms/{roomId}` subcollection → `measurements` array embedded in each room document
 - **Real-time sync:** Firestore `addSnapshotListener` on the dashboard, house detail, and room detail screens
-- **Concurrency:** Swift completion-handler callbacks (no Combine, per project guidelines)
-- **Image persistence:** JPEG → base64 → string field on the room document. Aggressive client-side compression keeps each image well under the 1 MiB Firestore document limit (the free Spark plan limit for a single document)
+- **Image persistence:** JPEG → base64 → string field on the room document. client-side compression keeps each image well under the 1 MiB Firestore document limit (the free Spark plan limit for a single document)
 - **Sharing:** `UIActivityViewController` for the Share Quote feature
 - **Input validation:** All numeric fields use `Double(_:)` initialiser with > 0 check; text fields trimmed and length-checked through `ValidationManager`
 
@@ -157,47 +155,15 @@ In all cases, the AI response was a starting point. I then:
 
 ---
 
-## Project Structure
-
-```
-SalesInterior/
-├── App/
-│   ├── AppDelegate.swift
-│   └── SceneDelegate.swift
-├── Managers/
-│   ├── FirebaseManagerNew.swift      // Firestore CRUD singleton
-│   ├── ValidationManager.swift       // Form validation rules
-│   └── ImageManagerDelegate.swift    // UIImagePickerController wrapper
-├── Models/
-│   ├── House.swift
-│   ├── Room.swift
-│   ├── RoomMeasurement.swift
-│   └── Product.swift
-├── ViewControllers/
-│   ├── HouseListViewController.swift
-│   ├── AddHouseViewController.swift
-│   ├── HouseDetailViewController.swift
-│   ├── RoomDetailViewController.swift
-│   └── QuoteViewController.swift
-├── Storyboards/
-│   ├── Main.storyboard
-│   └── LaunchScreen.storyboard
-├── Assets.xcassets
-├── GoogleService-Info.plist
-└── Info.plist
-```
-
----
-
 ## Setup Instructions for Marker
 
 1. **Open Project**
    ```
-   Open SalesInterior.xcodeproj in Xcode 16 (or newer)
+   Open SalesInterior.xcodeproj in Xcode
    ```
 
 2. **Resolve Dependencies**
-   - Swift Package Manager will automatically fetch Firebase iOS SDK
+   - Swift Package Manager will automatically fetch [Firebase iOS SDK](https://github.com/firebase/firebase-ios-sdk).
    - Wait for dependency resolution to complete
 
 3. **Verify Configuration Files**
@@ -205,11 +171,10 @@ SalesInterior/
    - File is included in this submission per assignment requirements
 
 4. **Select Target Device**
-   - Choose **iPhone 16 Pro Simulator** (or any iPhone running iOS 15+)
+   - Choose **iPhone 17 Pro Simulator** (or any iPhone running iOS 15+)
 
 5. **Build & Run**
    - Press ⌘R to build and launch
-   - On first run, dashboard will be empty
    - Use the `+` button to add houses, rooms, measurements, and photos
 
 6. **Test Workflow**
@@ -223,10 +188,3 @@ SalesInterior/
 - Images compressed to 800×800px @ JPEG quality 0.1–0.7 to stay under Firestore limits
 - Real-time updates rely on active Firestore listeners; offline changes sync when connection resumes
 
----
-
-## Additional Resources
-
-- [Firebase iOS SDK GitHub](https://github.com/firebase/firebase-ios-sdk)
-- [Apple Developer Documentation](https://developer.apple.com/documentation/)
-- [Xcode Documentation](https://developer.apple.com/xcode/)
